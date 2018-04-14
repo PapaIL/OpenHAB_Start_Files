@@ -12,8 +12,8 @@ This version of addons.cfg should provide all the Add-Ons that OpenHAB needs for
 
 This version of mqtt.cfg should help set up OpenHAB to use the Mosquitto message broker to communicate between the DIY Home Automation components. (One must also install the Mosquitto service on the same computer that hosts OpenHAB.)
 
-http://homeautomation.proboards.com/thread/222/building-rfm69-automation-network-beginners
-The three "My" files (My.items, My.rules, My.sitemap) are sample OpenHAB config files that particularly relate to this project to build one's first DIY Home Automation network of a Gateway & a node that communicate with RFM69 radios & the Gateway bridges communication between the node & OpenHAB.
+             http://homeautomation.proboards.com/thread/222/building-rfm69-automation-network-beginners
+The three "My" files (My.items, My.rules, My.sitemap) are sample OpenHAB config files that particularly relate to the project to build one's first DIY Home Automation network of a Gateway & a node that communicate with RFM69 radios & the Gateway bridges communication between the node & OpenHAB.
 
 To the basic OpenHAB icon set, comfort_level.svg adds a display icon for the first DIY Home Automation network project.
 		
