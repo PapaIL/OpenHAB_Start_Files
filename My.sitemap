@@ -1,0 +1,31 @@
+// My.sitemap OpenHAB config file (coordinates with My.rules, My.items, & other config files
+ 
+// A BASIC version for OpenHAB to work with a Gateway & one DHT End Node (Node02) with push button, relay, & DHT sensor
+ 
+//    This file guides what the OpenHAB User Interface (UI) displays in a browser window
+ 
+// Clicking the "Nodes" icon at the top left takes one to a page displaying Node02's RSSI (radio signal strength) & voltage
+
+// clicking on the virtual switch to the right of Node02_Output will toggle the Node02 LED
+
+// The End Node's local push button will also toggle the node's LED AND the UI virtual switch
+
+//    This file displays temp & humidity from Node 02 on seperate lines
+//  Then using the one rule in My.rules, it combines temp & humidity on one space saving line
+//  << using this you may comment out the separate lines or the combo line
+ 
+sitemap My label="My House"
+ 
+{
+    Group item=Nodes label="Node Health" icon="network"
+     
+    Frame  {
+          Switch item=Act_Node02 label="Node02_Output"
+          }
+          
+    Frame label="Inside Conditions" {
+        Text item=Temperature_Node02
+        Text item=Humidity_Node02
+        Text item=Node02_Data
+    }
+}
