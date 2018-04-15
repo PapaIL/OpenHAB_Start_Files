@@ -1,8 +1,8 @@
 # OpenHAB_Start_Files
 
-This is a package of OpenHAB 2 config files to get beginners started.
+This is a package of OpenHAB 2 config files to get beginners started after OpenHAB is installed on a Linux computer (including Raspberry Pi).
 
-These files relate to the DIY Home Automation hardware & software at this location.
+These files relate to the DIY Home Automation hardware & software at this location:
 	http://homeautomation.proboards.com/
 		especially http://homeautomation.proboards.com/thread/222/building-rfm69-automation-network-beginners
 		
@@ -17,4 +17,4 @@ The three "My" files (My.items, My.rules, My.sitemap) are sample OpenHAB config 
 
 To the basic OpenHAB icon set, comfort_level.svg adds a display icon for the first DIY Home Automation network project.
 		
-There is a Linux bash script to download these files & copy them to the correct folders.
+A Linux bash script is being developed to download these files & copy them to the correct folders.
