@@ -1,6 +1,6 @@
 # OpenHAB_Start_Files
 
-This is a package of OpenHAB 2 config files to get beginners started after OpenHAB is installed on a Linux computer (including Raspberry Pi).
+This is a package of OpenHAB 2 config files to get beginners started after OpenHAB is installed on a Windows computer or a Linux computer (including Raspberry Pi).
 
 These files relate to the DIY Home Automation hardware & software at this location:
 	http://homeautomation.proboards.com/
