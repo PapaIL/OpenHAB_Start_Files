@@ -19,4 +19,4 @@ The three "My" files (My.items, My.rules, My.sitemap) are sample OpenHAB config 
 
 To the basic OpenHAB icon set, comfort_level.svg adds a display icon for the first DIY Home Automation network project.
 		
-A Linux bash script is being developed to download these files & copy them to the correct folders.
+A Windows batch script & a Linux bash script are being developed to download these files & copy them to the correct folders.
