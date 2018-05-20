@@ -6,7 +6,7 @@ These files relate to the DIY Home Automation hardware & software at this locati
 	http://homeautomation.proboards.com/
 		especially http://homeautomation.proboards.com/thread/222/building-rfm69-automation-network-beginners
 		
-These files should best be installed just after OpenHAB 2 is installed & bjust efore one would use the browser link to enter the PaperUI dashboard.  In this way, as I recommend, the configurations can be accomplished through configuration text files that end in .cfg
+These files should best be installed just after OpenHAB 2 is installed & just before one would use the browser link to enter the PaperUI dashboard.  In this way, as I recommend, the configurations can be accomplished through configuration text files that end in .cfg
 
 Caution:  If you install these files in their expected OpenHAB2 folders, they may overwrite existing OpenHAB config files.  If your existing files have important entries that you do not want to lose, save copies of the files elsewhere where you can find them.
 
