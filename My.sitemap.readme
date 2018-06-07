@@ -10,4 +10,4 @@ Notes on My.sitemap, here because OpenHAB does not like anything inside a sitema
 
     This file displays temp & humidity from Node 02 on seperate lines
   Then using the one rule in My.rules, it combines temp & humidity on one space saving line
-  << using this you may comment out the separate lines or the combo line
+  // << using this you may comment out the separate lines or the combo line
