@@ -18,5 +18,9 @@ http://homeautomation.proboards.com/thread/222/building-rfm69-automation-network
 The three "My" files (My.items, My.rules, My.sitemap) are sample OpenHAB config files that particularly relate to the above project of building one's first DIY Home Automation network of a Gateway & a node that communicate with RFM69 radios & the Gateway bridges communication between the node & OpenHAB.
 
 To the basic OpenHAB icon set, comfort_level.svg adds a display icon for the first DIY Home Automation network project.
+
+classic.zip, extract its files to OpenHAB's \icons\classic folder.  For your OpenHAB User Interface display, this gives you several added icons, many from JimKernsJr & some from me.
+
+weather.items gives you several weather items to work with & show you examples.  weather.items uses English units of measure, but you can open & edit it with Notepad++.  Use information at http://homeautomation.proboards.com/post/1814/thread, including the official OpenHAB documentation references, to help you make the changes.
 		
-At http://homeautomation.proboards.com/post/3337/thread is a Windows batch script to download these files & copy them to the correct folders. A Linux bash script is being developed to do the same.
+At http://homeautomation.proboards.com/post/3337/thread is a Windows batch script to download most of these files & copy them to the correct folders. A Linux bash script is being developed to do the same.
