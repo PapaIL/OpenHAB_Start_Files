@@ -26,7 +26,7 @@ Number Precip_Probability_2day "Precip probable tomorrow [%d %%]" <rain>  (Weath
 
 Number Precip_IN_Yesterday "Precip Yesterday [%s in]" <precip2>  (Precip)
 
-Number Temp_Feel "Temperature feel [%.1f °F]" <temperature> (Weather)  {weather="locationId=home, type=temperature, property=feel, unit=fahrenheit"}
+Number Temp_Feel "Temperature feel [%.1f Â°F]" <temperature> (Weather)  {weather="locationId=home, type=temperature, property=feel, unit=fahrenheit"}
 Number Weather_Humidex			"Humidex [SCALE(humidex.scale):%s]" <comfort_level>	  (Weather)
 String Feel "Temperature Feel / Humidex [%s]" <comfort_level>
 
@@ -36,7 +36,6 @@ Number Weather_Temp_Min "Todays Minimum [%.1f F]" <temperature> (Weather_Chart) 
 
 Number Weather_Chart_Period		"Chart Period"
 DateTime LastUpdate "As of [%1$ta %1$tm.%1$td.%1$tY %1$tl:%1$tM %1$tp]" <clock> {weather="locationId=home, type=condition, property=lastUpdate"}
-DateTime Weather_LastUpdate		"Last Update [%1$ta %1$tr]"	            <clock> {weather="locationId=home, type=condition, property=lastUpdate"}
 String Station_Name "Station Name [%s]" <winddir> {weather="locationId=home, type=station, property=name"}
 String   Station_Id           "Station Id [%s]"          {weather="locationId=home, type=station, property=id"}
 Number   Station_Latitude     "Station Latitude [%.6f]"  {weather="locationId=home, type=station, property=latitude, scale=6"}
