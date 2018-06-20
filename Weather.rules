@@ -1,0 +1,98 @@
+
+//  Select ONLY ONE of the following 2 lines (remove //) & deactivate the other (put // at the start)
+val String unit = "English"
+// val String unit = "Metric"
+
+rule Predict
+  when
+	Item Forecast_Today changed or
+	Item Trend changed or
+	Item Precip_Probability changed // or
+// 	Time cron "0 0/1 * * * ?"
+  then
+		  var String F_Today = Forecast_Today.state.toString
+          var String P_Trend = Trend.state.toString
+          var int Precip_P_r = (Precip_Probability.state as DecimalType).intValue
+	 	    Forecast_Trend.postUpdate(F_Today + ",  " + transform("MAP", "trend.map", P_Trend) + ",  "  + Precip_P_r + "%")
+	// logInfo("Predict", "+++++PrecipProb (Precip_P_r) = " + Precip_P_r + "%")
+end
+
+rule How_It_Feels
+  when
+	Item Weather_Temperature changed or
+	Item Weather_Humidity changed or
+    Item Temp_Feel changed or
+    Item Weather_Humidex changed or
+	Time cron "0 0/1 * * * ?"
+  then
+          var Number Ftemp = Temp_Feel.state
+          var String Hdex = Weather_Humidex.state.toString
+	  if(unit == "English") Feel.postUpdate(Ftemp + " F, " + transform("SCALE", "humidex.scale", Hdex)) 
+	  if(unit == "Metric") Feel.postUpdate(Ftemp + " C, " + transform("SCALE", "humidex.scale", Hdex))
+end
+
+rule Ext_Climate
+	when
+        Item Weather_Temperature changed or
+        Item Weather_Humidity changed or
+		Time cron "0 */1 * * * ?"
+	then
+          var Number HumiW = Weather_Humidity.state
+          var Number TempW = Weather_Temperature.state
+          var Number HumiW_r = (Math::round(HumiW.floatValue))
+          var Number TempW_r = (Math::round(TempW.floatValue))
+//		logInfo("first.rules", "In rule Ext_Climate")
+          var String WthC = Condition.state.toString
+      if(unit == "English") Climate_Out.postUpdate(TempW_r + " F... " + HumiW_r + " %  " + WthC)
+	  if(unit == "Metric")  Climate_Out.postUpdate(TempW_r + " C... " + HumiW_r + " %  " + WthC)
+end
+
+rule Wind_Condition
+when
+Item Wind_Speed changed or
+Item Wind_Direction changed or
+Time cron "0 0/2 * * * ?"
+then
+var Number Speed = Wind_Speed.state
+var String Vector = Wind_Direction.state.toString
+Wind_Data.postUpdate(Speed + " MPH, " + Vector)
+end
+
+// This rule will be used to test Scale transformation service
+// H = T + (0.5555 * (e - 10)), where T is the temperature in Celsius and e is the vapor pressure in millibars (mb)
+//     (°F  -  32)  x  5/9 = °C
+// 	var Number T = Weather_Temperature.state as DecimalType // this line (celsius) top of "then" replaced by top 2 lines (fahrenheit) 
+
+// works now for fahrenheit & celsius
+rule "Compute humidex"  // a measure of 'weather comfort'
+when
+    Item Weather_Temperature changed or
+	Item Weather_Humidity changed or
+	Time cron "0 0/2 * * * ?"
+then
+	var Number F = (Weather_Temperature.state as DecimalType) -32
+	var Number T = F * 5 / 9
+	  if(unit == "Metric") T = F
+	var Number H = Weather_Humidity.state as DecimalType	
+	var Number x = 7.5 * T/(237.7 + T)
+	var Number e = 6.112 * Math::pow(10, x.doubleValue) * H/100
+	var Number humidex = T + (new Double(5) / new Double(9)) * (e - 10)
+	//	logInfo("Weather", "humidex is " + humidex)
+	postUpdate(Weather_Humidex, humidex)
+end
+
+/*  // disabled, but preserved as original Humidex rule
+
+rule "Compute Celsius humidex"  // a measure of 'weather comfort'
+when
+        Item Weather_Temperature_C changed or
+	Item Weather_Humidity changed
+then
+	var Number T = (Weather_Temperature.state as DecimalType)
+	var Number H = Weather_Humidity.state as DecimalType	
+	var Number x = 7.5 * T/(237.7 + T)
+	var Number e = 6.112 * Math::pow(10, x.doubleValue) * H/100
+	var Number humidex = T + (new Double(5) / new Double(9)) * (e - 10)
+	postUpdate(Weather_Humidex_C, humidex)
+end
+*/
