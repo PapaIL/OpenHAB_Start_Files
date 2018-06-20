@@ -1,0 +1,43 @@
+Group Weather_Chart		 (Weather)
+Group Precipitation
+
+Number Weather_Temperature "Outdoor Temp [%.1f C]" <temperature> (Weather_Chart, Weather) {weather="locationId=home, type=temperature, property=current"}
+String Temp_MinMax "Today's Low / High [%s C]" <temperature> (Weather) {weather="locationId=home, forecast=0, type=temperature, property=minMax"}
+Number Weather_Humidity	"Outside Humidity [%d %%]" <humidity> (Weather_Chart) {weather="locationId=home, type=atmosphere, property=humidity, scale=1" }
+String Forecast_Today "Today's Forecast [%s]" <Question_Cloud> {weather="locationId=home, forecast=0, type=condition, property=text"}
+
+String Trend "Pressure Trend [MAP(trend.map):%s]" <Question_Cloud> {weather="locationId=home, type=atmosphere, property=pressureTrend, scale=1" }
+
+Number Precip_Probability "Precip probability [%d %%]" <rain>  {weather="locationId=home, forecast=0, type=precipitation, property=probability"}
+
+String Forecast_Trend "Today, Trend, Precip ? [%s]" 	<question_cloud>
+
+String Climate_Out "Climate Outside [%s]" <sun_clouds> (Weather)
+
+String Condition "Condition [%s]" <sun_clouds> (Weather) {weather="locationId=home, type=condition, property=text"}
+Number Wind_Speed    "Windspeed [%.1f km/h]" <wind_vane> (Weather) {weather="locationId=home, type=wind, property=speed"}
+String Wind_Direction  "Wind direction [%s]"   <wind_vane>  (Weather) {weather="locationId=home, type=wind, property=direction"}
+String Wind_Data "Wind [%s]" <windvane>
+
+Number Precip  "Precip total [%s mm]" <rain>  (Weather, Precipitation)  {weather="locationId=home, type=precipitation, property=total"}
+
+Number Precip_Probability_2day "Precip probable tomorrow [%d %%]" <rain>  (Weather) {weather="locationId=home, forecast=2, type=precipitation, property=probability"}
+
+Number Precip_Yesterday "Precip Yesterday [%s mm]" <precip2>  (Precipitation)
+
+Number Temp_Feel "Temperature feel [%.1f C]" <temperature> (Weather)  {weather="locationId=home, type=temperature, property=feel"}
+Number Weather_Humidex			"Humidex [SCALE(humidex.scale):%s]" <comfort_level>	  (Weather)
+String Feel "Temperature Feel / Humidex [%s]" <comfort_level>
+
+Number Weather_Temp_Max 		"Todays Maximum [%.1f C]"	<temperature> (Weather_Chart)  {weather="locationId=home, forecast=0, type=temperature, property=max"}
+
+Number Weather_Temp_Min "Todays Minimum [%.1f C]" <temperature> (Weather_Chart) {weather="locationId=home, forecast=0, type=temperature, property=min"}
+
+Number Weather_Chart_Period		"Chart Period"
+DateTime LastUpdate "As of [%1$ta %1$tm.%1$td.%1$tY %1$tl:%1$tM %1$tp]" <clock> {weather="locationId=home, type=condition, property=lastUpdate"}
+// DateTime Weather_LastUpdate		"Last Update [%1$ta %1$tr]"	            <clock> {weather="locationId=home, type=condition, property=lastUpdate"}
+String Station_Name "Station Name [%s]" <winddir> {weather="locationId=home, type=station, property=name"}
+String   Station_Id           "Station Id [%s]"          {weather="locationId=home, type=station, property=id"}
+Number   Station_Latitude     "Station Latitude [%.6f]"  {weather="locationId=home, type=station, property=latitude, scale=6"}
+Number   Station_Longitude    "Station Longitude [%.6f]" {weather="locationId=home, type=station, property=longitude, scale=6"}
+

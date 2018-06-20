@@ -1,0 +1,29 @@
+sitemap Weather label="My Weather"
+{
+	Frame label="Weather"
+{
+        Text item=Weather_Temperature valuecolor=[>77="orange",>59="green",>41="orange",<=41="blue"]
+ {
+            Frame {
+            	Text item=Climate_Out valuecolor=["green"]
+				Text item=Precip
+                Text item=Weather_Temp_Max valuecolor=[>77="orange",>59="green",>41="orange",<=41="blue"]
+				Text item=Weather_Temp_Min valuecolor=[>77="orange",>59="green",>41="orange",<=41="blue"]
+				Text item=Feel
+				Text item=Weather_Humidex
+				Text item=Temp_Feel
+				Text item=Wind_Data
+				Text item=Forecast_Trend
+				Text item=Precip_Probability_2day
+				Text item=Station_Name
+				Text item=LastUpdate
+			}
+			Frame {
+				Switch item=Weather_Chart_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
+				Chart item=Weather_Chart period=h refresh=6000 visibility=[Weather_Chart_Period==0, Weather_Chart_Period=="Uninitialized"]
+				Chart item=Weather_Chart period=D refresh=30000 visibility=[Weather_Chart_Period==1]
+				Chart item=Weather_Chart period=W refresh=30000 visibility=[Weather_Chart_Period==2]
+			}
+		}
+	}
+}
