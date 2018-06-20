@@ -21,6 +21,10 @@ To the basic OpenHAB icon set, comfort_level.svg adds a display icon for the fir
 
 classic.zip, extract its files to OpenHAB's \icons\classic folder.  For your OpenHAB User Interface display, this gives you several added icons, many from JimKernsJr & some from me.
 
-weather.items gives you several weather items to work with & show you examples.  weather.items uses English units of measure, but you can open & edit it with Notepad++.  Use information at http://homeautomation.proboards.com/post/1814/thread, including the official OpenHAB documentation references, to help you make the changes.
+Files starting with "weather" need OpenHAB's Weather binding installed & edits in weather.cfg  See here for help with that: http://homeautomation.proboards.com/thread/191/display-weather-info-openhab-interface
+
+weather_English.items & weather_Metric.items give you several weather items to work with & show you examples. Use only one of them in OpenHAB's \items folder or they will conflict. You can open & edit them with Notepad++.  Use information at http://homeautomation.proboards.com/post/1814/thread, including the official OpenHAB documentation references, to help you make changes.
+
+weather.rules combines some weather items so they can display in one screen slot.  Weather.sitemap displays the weather data obtained from weather items & weather rules.
 		
-At http://homeautomation.proboards.com/post/3337/thread is a Windows batch script to download most of these files & copy them to the correct folders. A Linux bash script is being developed to do the same.
+At http://homeautomation.proboards.com/post/3337/thread is a Windows batch script to download some of these files & copy them to the correct folders. A Linux bash script is being developed to do the same.
