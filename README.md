@@ -10,7 +10,7 @@ These files should best be installed just after OpenHAB 2 is installed & just be
 
 Caution:  If you install these files in their expected OpenHAB2 folders, they may overwrite existing OpenHAB config files.  If your existing files have important entries that you do not want to lose, save copies of the files elsewhere where you can find them.
 
-This version of addons.cfg should provide all the Add-Ons that OpenHAB needs for the DIY Home Automation projects.
+This version of addons.cfg should provide much of the Add-Ons that OpenHAB needs for the DIY Home Automation projects. However, if you want to use openhab cloud, you need to add that to misc =
 
 This version of mqtt.cfg should help set up OpenHAB to use the Mosquitto message broker to communicate between the DIY Home Automation components. (One must also install the Mosquitto service on the same computer that hosts OpenHAB.)
 
