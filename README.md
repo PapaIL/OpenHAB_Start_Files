@@ -21,7 +21,9 @@ To the basic OpenHAB icon set, comfort_level.svg adds a display icon for the fir
 
 classic.zip, extract its files to OpenHAB's \icons\classic folder.  For your OpenHAB User Interface display, this gives you several added icons, many from JimKernsJr & some from me.
 
-Files starting with "weather" need OpenHAB's Weather binding installed & edits in weather.cfg  See here for help with that: http://homeautomation.proboards.com/thread/191/display-weather-info-openhab-interface
+Put weather.cfg in OpenHAB's \services folder.  With Notepadd++, open it for editing.  Find 3 lines that have "Replace this ..." after =. Replace everything after the = with the requested info.
+
+Other files starting with "weather" need OpenHAB's Weather binding installed & edits in weather.cfg  See here for help with that: http://homeautomation.proboards.com/thread/191/display-weather-info-openhab-interface
 
 weather_English.items & weather_Metric.items give you several weather items to work with & show you examples. Use only one of them in OpenHAB's \items folder or they will conflict. You can open & edit them with Notepad++.  Use information at http://homeautomation.proboards.com/post/1814/thread, including the official OpenHAB documentation references, to help you make changes.
 
