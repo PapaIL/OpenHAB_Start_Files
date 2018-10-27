@@ -1,0 +1,9 @@
+
+
+String Node90Rssi "Mail90_RSSI (db)[%s]" <network> (Nodes) {mqtt="<[mosquitto:home/rfm_gw/nb/node90/dev02:state:default]"}
+
+Number Node90Voltage "Mail90Volts [%.2f Vdd]" <battery> (Nodes) {mqtt="<[mosquitto:home/rfm_gw/nb/node90/dev04:state:default]"}
+
+Number Node90VibVal "VibValue90 [%.2f secs]" <clock> (Nodes) {mqtt="<[mosquitto:home/rfm_gw/nb/node90/dev71:state:default]"}
+
+Switch Node90VibState
