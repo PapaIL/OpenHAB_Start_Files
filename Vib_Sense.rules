@@ -1,0 +1,34 @@
+// For Vibration Sensor Node, uncomment this rule (before & after, remove /*  */ )
+    // AND comment the next rule (put /* before it & */ after it)
+
+rule "Vibr_Sensor"
+  when Item Node90VibVal changed
+  then
+    postUpdate(vibration_time, new DateTimeType())
+	var Number V_Stat = Node90VibVal.state
+
+	if(V_Stat < 35) {
+		Node90VibState.postUpdate(OFF)
+	   }
+	if(V_Stat > 900) {
+		Node90VibState.postUpdate(ON)
+	   }
+end
+
+// For Vibration Timer Node, uncomment this rule (before & after, remove /*  */ )
+    // AND comment the previous rule (put /* before it & */ after it)
+/*
+// rule Vibr_Timer_Status
+//   when Item Node90VibVal changed
+//   then
+//     postUpdate(vibration_time, new DateTimeType())
+// 	var Number V_Stat = Node90VibVal.state
+
+// 	if(V_Stat < 0) {
+// 		Node90VibState.postUpdate(OFF)
+//	   }
+// 	if(V_Stat > 0) {
+// 		Node90VibState.postUpdate(ON)
+// 	   }
+// end
+*/

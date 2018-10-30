@@ -1,0 +1,13 @@
+Switch Node90VibState
+
+String Node90Rssi "Mail90_RSSI (db)[%s]" <network> (Nodes) {mqtt="<[mosquitto:home/rfm_gw/nb/node90/dev02:state:default]"}
+
+Number Node90Voltage "Mail90Volts [%.2f Vdd]" <battery> (Nodes) {mqtt="<[mosquitto:home/rfm_gw/nb/node90/dev04:state:default]"}
+
+DateTime vibration_time "Vibration on or off: [%1$tA, %1$tm/%1$td, %1$tI:%1$tM %1$tp]" <calendar>
+
+// Uncomment for Vibration Sensor Node (& comment the next item):
+Number Node90VibVal "VibValue90 [%.0f vib]" <clock> (Nodes) {mqtt="<[mosquitto:home/rfm_gw/nb/node90/dev71:state:default]"}
+
+// Uncomment for Vibration Timer Node (& comment the previous item):
+// Number Node90VibVal "VibValue90 [%.0f secs]" <clock> (Nodes) {mqtt="<[mosquitto:home/rfm_gw/nb/node90/dev71:state:default]"}
