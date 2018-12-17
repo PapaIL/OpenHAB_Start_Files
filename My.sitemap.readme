@@ -2,12 +2,12 @@ Notes on My.sitemap, here because OpenHAB does not like anything inside a sitema
 
     This file guides what the OpenHAB User Interface (UI) displays in a browser window
  
- Clicking the "Nodes" icon at the top left takes one to a page displaying Node02's RSSI (radio signal strength) & voltage
+ Clicking the "Nodes" icon at the top left takes one to a page displaying Node05's RSSI (radio signal strength) & voltage
 
- clicking on the virtual switch to the right of Node02_Output will toggle the Node02 LED
+ clicking on the virtual switch to the right of Node05_Output will toggle the Node05 LED
 
  The End Node's local push button will also toggle the node's LED AND the UI virtual switch
 
-    This file displays temp & humidity from Node 02 on seperate lines
+    This file displays temp & humidity from Node 05 on seperate lines
   Then using the one rule in My.rules, it combines temp & humidity on one space saving line
   // << using this you may comment out the separate lines or the combo line
