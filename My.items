@@ -1,18 +1,18 @@
 // My.items OpenHAB config file (coordinates with My.rules, My.sitemap, & other config files)
  
-// A BASIC version for OpenHAB to work with a Gateway & one DHT End Node (Node02) with push button, relay, & DHT11 sensor
+// A BASIC version for OpenHAB to work with a Gateway & one DHT End Node (Node05) with push button, relay, & DHT11 sensor
  
 Group Nodes (Network)
  
-String Node2Rssi "Node2 RSSI [%s db]" <network> (Nodes) {mqtt="<[mosquitto:home/rfm_gw/nb/node02/dev02:state:default]", expire="3m,Offline?" }
+String Node5Rssi "Node5 RSSI [%s db]" <network> (Nodes) {mqtt="<[mosquitto:home/rfm_gw/nb/node05/dev02:state:default]", expire="3m,Offline?" }
  
-Number Node2Voltage "Node2Voltage [%.2f Vdd]" <battery> (Nodes) {mqtt="<[mosquitto:home/rfm_gw/nb/node02/dev04:state:default]"}
+Number Node5Voltage "Node5Voltage [%.2f Vdd]" <battery> (Nodes) {mqtt="<[mosquitto:home/rfm_gw/nb/node05/dev04:state:default]"}
  
-Switch Act_Node02 { mqtt="<[mosquitto:home/rfm_gw/nb/node02/dev16:state:default::]", mqtt=">[mosquitto:home/rfm_gw/sb/node02/dev16:command:*:default]" }
+Switch Act_Node05 { mqtt="<[mosquitto:home/rfm_gw/nb/node05/dev16:state:default::]", mqtt=">[mosquitto:home/rfm_gw/sb/node05/dev16:command:*:default]" }
  
 /* Indoor Conditions */
 /* itemtype itemname ["labeltext"] [<iconname>] [(group1, group2, ...)] [{bindingconfig}] */
-/* [%.1f °C] below for Celsius.     Use  [%.1f °F] below for Fahrenheit.*/
-Number Temperature_Node02 "Temperature_Node02 [%.1f °C]" <temperature> {mqtt="<[mosquitto:home/rfm_gw/nb/node02/dev48:state:default]"}
-Number Humidity_Node02 "Humidity_Node02 [%s %%]" <humidity> {mqtt="<[mosquitto:home/rfm_gw/nb/node02/dev49:state:default]"}
-String Node02_Data    "Node02 Temp / Humidity [%s]"      <comfort_level>
+/* [%.1f Â°C] below for Celsius.     Use  [%.1f Â°F] below for Fahrenheit.*/
+Number Temperature_Node05 "Temperature_Node05 [%.1f Â°C]" <temperature> {mqtt="<[mosquitto:home/rfm_gw/nb/node05/dev48:state:default]"}
+Number Humidity_Node05 "Humidity_Node05 [%s %%]" <humidity> {mqtt="<[mosquitto:home/rfm_gw/nb/node05/dev49:state:default]"}
+String Node05_Data    "Node05 Temp / Humidity [%s]"      <comfort_level>
