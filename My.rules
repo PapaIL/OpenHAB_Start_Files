@@ -1,19 +1,19 @@
 // My.items OpenHAB config file (coordinates with My.items, My.sitemap, & other config files
  
-// A BASIC version for OpenHAB to work with a Gateway & one DHT End Node (Node02) with push button, relay, & DHT11 sensor
+// A BASIC version for OpenHAB to work with a Gateway & one DHT End Node (Node05) with push button, relay, & DHT11 sensor
  
 // Imports needed by OpenHAB 1.x were deleted because OpenHAB 2 already loads them
  
-// Combines Node 02 Temp & Humidity into one display line
-rule Node02_Sensed
+// Combines Node 05 Temp & Humidity into one display line
+rule Node05_Sensed
     when
-       Item Temperature_Node02 changed or
-       Item Humidity_Node02 changed or
+       Item Temperature_Node05 changed or
+       Item Humidity_Node05 changed or
        Time cron "0 0/1 * * * ?"  
     then
-             var Number T02 = Temperature_Node02.state
-             var Number H02 = Humidity_Node02.state
-             var Number H02_r = (Math::round(H02.floatValue))
-             var Number T02_r = (Math::round(T02.floatValue * 10.0 ) /10.0)  
-        Node02_Data.postUpdate(T02_r + "°F... " + H02_r + "% ")
+             var Number T05 = Temperature_Node05.state
+             var Number H05 = Humidity_Node05.state
+             var Number H05_r = (Math::round(H05.floatValue))
+             var Number T05_r = (Math::round(T05.floatValue * 10.0 ) /10.0)  
+        Node05_Data.postUpdate(T05_r + "Â°F... " + H05_r + "% ")
     end
