@@ -4,12 +4,12 @@ sitemap My label="My House"
     Group item=Nodes label="Node Health" icon="network"
      
     Frame  {
-          Switch item=Act_Node02 label="Node02_Output"
+          Switch item=Act_Node05 label="Node05_Output"
           }
           
     Frame label="Inside Conditions" {
-        Text item=Temperature_Node02
-        Text item=Humidity_Node02
-        Text item=Node02_Data
+        Text item=Temperature_Node05
+        Text item=Humidity_Node05
+        Text item=Node05_Data
     }
 }
